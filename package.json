@@ -1,0 +1,28 @@
+{
+  "name": "node-wesbite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm install && cd client && npm install",
+    "start": "node src/app.js",
+    "server": "nodemon src/app.js",
+    "client": "cd client && npm run start",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client/src && npm install && npm run build",
+    "test": "nodemon src/app.js -e js,hbs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "mongodb": "^3.6.10",
+    "mongoose": "^5.13.9",
+    "node-fetch": "^2.6.1",
+    "react-countdown": "^2.3.2",
+    "validator": "^11.1.0"
+  }
+}
