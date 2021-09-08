@@ -24,9 +24,10 @@ router.post('/create', async (req, res) => {
 })
 
 
-router.get('/challenges', async (req, res) => {
+router.post('/challenges', async (req, res) => {
     try {
         const challenges = await Challenge.find({})
+
         res.json({challenges})
     } catch (e) {
         res.send(e)
@@ -35,7 +36,7 @@ router.get('/challenges', async (req, res) => {
 })
 
 
-router.get('/challenges/:id', async (req, res) => {
+router.post('/challenges/:id', async (req, res) => {
     const id = req.params.id
     try {
         const challenge = await Challenge.findById(id)
