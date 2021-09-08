@@ -17,7 +17,7 @@ function Header(props) {
             </li>
             <li className="nav-item">
                 {Cookies.get('token') === undefined?
-                <a className="nav-link text-white" href="https://discord.com/api/oauth2/authorize?client_id=884129859373269073&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2Fredirect&response_type=code&scope=identify%20email">Login</a>
+                <a className="nav-link text-white" href="https://discord.com/api/oauth2/authorize?client_id=884129859373269073&redirect_uri=https%3A%2F%2Fslingshotoss.herokuapp.com%2Fredirect&response_type=code&scope=identify%20email">Login</a>
                 : <a className="nav-link text-white" href="/userpage">Account</a>
                 }
             </li>
@@ -25,5 +25,7 @@ function Header(props) {
     </div>
     </nav>
 )}
+
+{/* <a className="nav-link text-white" href="https://discord.com/api/oauth2/authorize?client_id=884129859373269073&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2Fredirect&response_type=code&scope=identify%20email">Login</a> */}
 
 export default Header

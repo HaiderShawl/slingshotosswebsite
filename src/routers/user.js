@@ -21,8 +21,8 @@ router.get('/redirect', async ({ query }, res) => {
 			const token = await getToken(code)
 			res.cookie('token', token)
 
-            res.redirect(`http://localhost:3000/userpage`)            
-            // res.redirect(`https://www.qabot.social/serverpage`)
+            // res.redirect(`http://localhost:3000/userpage`)            
+            res.redirect(`https://slingshotoss.herokuapp.com/redirect`)
 
 		} catch (error) {
 			// NOTE: An unauthorized token will not throw an error;
@@ -64,8 +64,8 @@ const getToken = async (code) => {
 			client_secret: process.env.CLIENT_SECRET || 'Rq9phDm_1zTuTmV0JRkBMoKmYT0GnYS9',
 			code,
 			grant_type: 'authorization_code',
-			redirect_uri: `http://localhost:5000/redirect`,
-			// redirect_uri: 'https://www.qabot.social/redirect',
+			// redirect_uri: `http://localhost:5000/redirect`,
+			redirect_uri: 'https://slingshotoss.herokuapp.com/redirect',
 			scope: 'identify',
 		}),
 		headers: {
