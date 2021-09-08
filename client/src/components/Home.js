@@ -19,7 +19,7 @@ class Home extends React.Component {
 	}
 
 	componentDidMount() {
-		axios.get('/challenges').then((res) => {
+		axios.post('/challenges').then((res) => {
 
 			this.setState(prevState => {
 				prevState.challenge = res.data.challenges.reverse()[0]
