@@ -51,7 +51,7 @@ class Create extends React.Component {
 
 	handleSubmit(e) {
 		axios.post('/create', this.state.challenge).then(res => {
-			this.props.history.push("/challenges/"+res.data._id)
+			this.props.history.push("/challenges/"+res.data.r._id)
 			console.log(res.data)
 		}).catch(e => {
 			console.log(e)

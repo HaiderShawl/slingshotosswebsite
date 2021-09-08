@@ -22,7 +22,7 @@ router.get('/redirect', async ({ query }, res) => {
 			res.cookie('token', token)
 
             // res.redirect(`http://localhost:3000/userpage`)            
-            res.redirect(`https://slingshotoss.herokuapp.com/redirect`)
+            res.redirect(`https://slingshotoss.herokuapp.com/userpage`)
 
 		} catch (error) {
 			// NOTE: An unauthorized token will not throw an error;

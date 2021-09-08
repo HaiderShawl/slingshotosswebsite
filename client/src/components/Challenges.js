@@ -15,7 +15,7 @@ class Challenges extends React.Component {
 	componentDidMount() {
 		axios.get('/challenges').then((res) => {
 			this.setState(prevState => {
-				prevState.challenges = res.data.reverse()
+				prevState.challenges = res.data.challenges.reverse()
 				return prevState
 			})
 		})

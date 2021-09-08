@@ -17,7 +17,7 @@ router.post('/create', async (req, res) => {
     console.log(challenge)
     try {
         const r = await Challenge.create(challenge)
-        res.json(r)
+        res.json({r})
     } catch (e) {
         res.json(e)
     }
@@ -27,7 +27,7 @@ router.post('/create', async (req, res) => {
 router.get('/challenges', async (req, res) => {
     try {
         const challenges = await Challenge.find({})
-        res.json(challenges)
+        res.json({challenges})
     } catch (e) {
         res.send(e)
     }
@@ -39,7 +39,7 @@ router.get('/challenges/:id', async (req, res) => {
     const id = req.params.id
     try {
         const challenge = await Challenge.findById(id)
-        res.json(challenge)
+        res.json({challenge})
     } catch (e) {
         res.send(e)
     }

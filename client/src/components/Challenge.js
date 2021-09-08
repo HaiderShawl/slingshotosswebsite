@@ -32,7 +32,7 @@ class challenge extends React.Component {
 	componentDidMount() {
 		axios.get('/challenges/'+this.state.id).then(res => {
 			this.setState((prevState) => {
-				prevState.challenge = res.data
+				prevState.challenge = res.data.challenge
 				return prevState
 			})
 		}).catch(e => {
